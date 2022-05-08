@@ -113,7 +113,7 @@ barFrame.levelStrings = {barOverlay.LeftText, barOverlay.MidText, barOverlay.Rig
 -- store markers for each fontstring
 barFrame.levelContainers = {}
 
--- assign levelContainers 
+-- assign levelContainers, @experimental 
 for i, _ in ipairs(barFrame.levelStrings) do
     local levelContainer = barFrame:CreateTexture(nil,"OVERLAY")
     levelContainer:SetTexture("Interface\\Calendar\\UI-Calendar-Button-Glow")
@@ -128,7 +128,7 @@ end
 
 
 --set bar visuals
-bar:SetStatusBarTexture("Interface\\AddOns\\ExBar\\art\\bar_elvui")
+bar:SetStatusBarTexture("Interface\\AddOns\\SleepyPeon\\art\\bar_elvui")
 bar:ClearAllPoints()
 bar:SetAllPoints(barFrame)
 bar:SetMinMaxValues(0, 100)
@@ -136,7 +136,7 @@ bar:SetFrameStrata(barFrame:GetFrameStrata())
 bar:SetFrameLevel(barFrame:GetFrameLevel()+1)
 
 -- set xp bar visuals
-restbar:SetStatusBarTexture("Interface\\AddOns\\ExBar\\art\\bar_elvui")
+restbar:SetStatusBarTexture("Interface\\AddOns\\SleepyPeon\\art\\bar_elvui")
 restbar:ClearAllPoints()
 restbar:SetAllPoints(barFrame)
 restbar:SetMinMaxValues(0, 100)
@@ -145,16 +145,16 @@ restbar:SetFrameLevel(barFrame:GetFrameLevel())
 
 -- set background visuals
 barFrame.bg = barFrame:CreateTexture(nil, "BACKGROUND")
-barFrame.bg:SetTexture("Interface\\AddOns\\ExBar\\art\\bar_tukui")
+barFrame.bg:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\bar_tukui")
 barFrame.bg:SetAllPoints(true)
 barFrame.bg:SetVertexColor(0.41, 0.41, 0.41)
 barFrame.bg:SetAlpha(0.4)
 
 -- create ticker for rested xp bar
 local exhTicker = CreateFrame("Button","ticker",restbar);
-exhTicker:SetNormalTexture("Interface\\AddOns\\ExBar\\art\\red_spark");
+exhTicker:SetNormalTexture("Interface\\AddOns\\SleepyPeon\\art\\red_spark");
 exhTicker:GetNormalTexture():SetBlendMode("ADD");
-exhTicker:SetHighlightTexture("Interface\\AddOns\\ExBar\\art\\spark");
+exhTicker:SetHighlightTexture("Interface\\AddOns\\SleepyPeon\\art\\spark");
 exhTicker:SetFrameStrata("DIALOG");
 exhTicker:SetFrameLevel(barOverlay:GetFrameLevel()-1);
 exhTicker:SetWidth(32);
@@ -166,14 +166,14 @@ exhTicker.resting = false;
 
 -- create dividers
 bar.firstDiv = bar:CreateTexture(nil,"OVERLAY");
-bar.firstDiv:SetTexture("Interface\\AddOns\\Exbar\\art\\divider")
+bar.firstDiv:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\divider")
 bar.firstDiv:SetHeight(barFrame:GetHeight())
 bar.firstDiv:SetVertexColor(0,0,0,0.7)
 bar.firstDiv:SetWidth(12)
 bar.firstDiv:Hide()
 
 bar.secondDiv = bar:CreateTexture(nil,"OVERLAY");
-bar.secondDiv:SetTexture("Interface\\AddOns\\Exbar\\art\\divider")
+bar.secondDiv:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\divider")
 bar.secondDiv:SetHeight(barFrame:GetHeight())
 bar.secondDiv:SetVertexColor(0,0,0,0.7)
 bar.secondDiv:SetWidth(12)
@@ -190,7 +190,7 @@ f:SetWidth(barFrame:GetWidth()+6);
 f:SetHeight(barFrame:GetHeight()+7);
 f:SetBackdrop({ 
     bgFile = "",-- defaults
-	edgeFile = "Interface\\AddOns\\Exbar\\art\\glassborder",
+	edgeFile = "Interface\\AddOns\\SleepyPeon\\art\\glassborder",
 	tile = false,
 	tileEdge = true,
 	tileSize = 20,
@@ -201,7 +201,7 @@ f:SetBackdrop({
 
 
 
--- experimental borders
+-- @experimental borders
 function barFrame:SetBorders()
 
     local offset = 0
@@ -211,12 +211,12 @@ function barFrame:SetBorders()
 
             local topDivider = self:CreateTexture(nil,"BORDER")
 
-            topDivider:SetTexture("Interface\\AddOns\\ExBar\\art\\border"..i+1)
+            topDivider:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\border"..i+1)
             topDivider:SetPoint("LEFT",barFrame,"TOPLEFT",offset + i * topDivider:GetWidth(),-4)
             topDivider:Show()
 
             local botDivider = self:CreateTexture(nil,"BORDER")
-            botDivider:SetTexture("Interface\\AddOns\\ExBar\\art\\border"..i+1)
+            botDivider:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\border"..i+1)
             botDivider:SetPoint("LEFT",barFrame,"BOTTOMLEFT",offset + i * botDivider:GetWidth(),8)
             botDivider:SetTexCoord(0,1,0,0,1,1,1,0)
             botDivider:Show()
@@ -229,7 +229,7 @@ function barFrame:SetBorders()
     end 
 
     local studLeft = self:CreateTexture(nil,"BORDER")
-    studLeft:SetTexture("Interface\\AddOns\\ExBar\\art\\borderStud")
+    studLeft:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\borderStud")
     studLeft:SetPoint("LEFT",barFrame,"LEFT",-9,2)
     studLeft:SetDrawLayer(dividerDrawLayer,1);
     studLeft:SetWidth(24);
@@ -237,7 +237,7 @@ function barFrame:SetBorders()
     studLeft:Hide()
 
     local studRight = self:CreateTexture(nil,"BORDER")
-    studRight:SetTexture("Interface\\AddOns\\ExBar\\art\\borderStud")
+    studRight:SetTexture("Interface\\AddOns\\SleepyPeon\\art\\borderStud")
     studRight:SetPoint("RIGHT",barFrame,"RIGHT",9,2)
     studRight:SetDrawLayer(dividerDrawLayer,1);
     studRight:SetWidth(24);
