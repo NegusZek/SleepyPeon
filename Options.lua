@@ -9,7 +9,7 @@ optionFrame.width = 160;
 optionFrame.height = 100;
 optionFrame.lockText = "Lock"
 optionFrame.defaultsText = "Default"
-
+optionFrame.titleText = "SleepyPeon"
 
 
 optionFrame:SetWidth(optionFrame.width);
@@ -33,7 +33,7 @@ optionFrame:SetBackdropColor(unpack(optionFrame.backdropColor));
 
 local title = optionFrame:CreateFontString(nil, nil, "GameFontNormalLarge");
 title:SetPoint("TOPLEFT",optionFrame,"TOPLEFT",15,-12);
-title:SetText("ExpRest");
+title:SetText(optionFrame.titleText);
 title:SetTextColor(unpack(optionFrame.titleColor));
 title:SetJustifyH("LEFT");
 
