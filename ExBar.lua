@@ -1,6 +1,6 @@
 
 
-local xp, exh, lvl, xp_denom, exhThreshold, exhState, tickPos = nil, nil, nil, nil, nil, nil, nil
+local xp, exh, lvl, xp_denom, exhState = nil, nil, nil, nil, nil
 local fontPath = "Fonts\\ARIALN.ttf"
 
 local xpTt = CreateFrame( "GameTooltip", "xpTt", nil, "GameTooltipTemplate"); -- Tooltip name cannot be nil
