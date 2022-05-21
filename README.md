@@ -19,5 +19,6 @@ This addOn tries to accomplish both points **1)** and **2)** while being fairly 
 - Mouseover to display a tooltip with quantity of rest xp and percentage of current level xp cap(maxes at 150%)
 
 
+### Some screenshots:
 https://imgur.com/a/DHghM8Z <br/>
 https://imgur.com/a/uF0p91U <br/>
